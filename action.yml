@@ -29,11 +29,11 @@ inputs:
           gitrepo:  ${{inputs.repo_name}}
           filename:  ${{inputs.filename}}
           cachename:  ${{inputs.cache_name}}
-          gitrepo:  ${{inputs.repo_name}}
+          git_repo:  ${{inputs.repo_name}}
       run: |
           mkdir cacherepo
           cd ./cacherepo
-          git clone https://$cachetoken@github.com/gitrepo
+          git clone https://$cachetoken@github.com/git_repo
           export dir=`ls`
           cd $dir
           mkdir $cachename
