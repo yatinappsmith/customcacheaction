@@ -18,7 +18,7 @@ Inputs:
     required: true
   actiontype:
     description: "Actiontype STORE RETRIEVE"
-      required: true
+    required: true
 
   runs:
     using: composite
