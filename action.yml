@@ -22,13 +22,7 @@ inputs:
     using: composite
     steps: 
       - name: Store file in cache
-        #env:
-        #  cachetoken: ${{inputs.token}}
-        #  gitrepo:  ${{inputs.repo_name}}
-        #  filename:  ${{inputs.filename}}
-        #  cachename:  ${{inputs.cache_name}}
-        #  git_repo:  ${{inputs.repo_name}}
-      run: |
+        run: |
           mkdir cacherepo
           cd ./cacherepo
           git clone https:// ${{inputs.token}}@github.com/${{inputs.repo_name}}
