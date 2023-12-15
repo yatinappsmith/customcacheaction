@@ -25,11 +25,11 @@ Inputs:
     steps: 
       - name: Store file in cache
         env:
-          cachetoken: ${{ inputs.token }}
-          gitrepo:  ${{ inputs.repo_name }}
-          filename:  ${{ inputs.filename }}
-          cachename:  ${{ inputs.cachename }}
-          gitrepo:  ${{ inputs.repo_name }}
+          cachetoken: ${{inputs.token}}
+          gitrepo:  ${{inputs.repo_name}}
+          filename:  ${{inputs.filename}}
+          cachename:  ${{inputs.cache_name}}
+          gitrepo:  ${{inputs.repo_name}}
       run: |
           mkdir cacherepo
           cd ./cacherepo
