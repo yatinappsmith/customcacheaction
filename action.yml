@@ -19,7 +19,6 @@ inputs:
     required: true
 
   runs:
-    using: composite
     steps: 
       - name: Store file in cache
         with:
