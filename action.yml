@@ -22,7 +22,7 @@ inputs:
     using: composite
     steps: 
       - name: Store file in cache
-        env:
+        with:
           cachetoken: ${{inputs.token}}
           gitrepo:  ${{inputs.repo_name}}
           filename:  ${{inputs.filename}}
