@@ -15,7 +15,7 @@ Inputs:
     required: true
   cache_name:
     description: "unique cache name to be refrenced"
-      required: true
+    required: true
   actiontype:
     description: "Actiontype STORE RETRIEVE"
       required: true
