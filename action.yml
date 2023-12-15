@@ -5,15 +5,18 @@ inputs:
   repo_name:
     description: "Username for image registry"
     required: true
-  registry_password:
+  token:
     description: "Password for image registry"
     required: true
-  image_name:
+  filename:
     description: "Name of the image to push"
     required: true
-  tag: 
-    description: "How to tag the image. Default: latest"    
-
+  cache_name: 
+    description: "How to tag the image. Default: latest"
+    required: true
+  actiontype: 
+    description: "How to tag the image. Default: latest"
+    required: true
 runs:
   using: "composite"
   steps:
