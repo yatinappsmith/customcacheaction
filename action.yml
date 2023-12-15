@@ -22,16 +22,22 @@ inputs:
     using: composite
     steps: 
       - name: Store file in cache
-        run: |
+        env:
+          cachetoken: ${{inputs.token}}
+          gitrepo:  ${{inputs.repo_name}}
+          filename:  ${{inputs.filename}}
+          cachename:  ${{inputs.cache_name}}
+          git_repo:  ${{inputs.repo_name}}
+      run: |
           mkdir cacherepo
           cd ./cacherepo
-          git clone https:// ${{github.event.inputs.token}}@github.com/${{github.event.inputs.repo_name}}
+          git clone https://$cachetoken@github.com/git_repo
           export dir=`ls`
           cd $dir
-          mkdir ${{inputs.cache_name}}
-          cp $filename ./${{inputs.cache_name}}/
-          git add ./${{inputs.cache_name}}/${{inputs.filename}}
-          git commit -m "${{inputs.cache_name}}"
+          mkdir $cachename
+          cp $filename ./$cachename/
+          git add ./$cachename/$filename
+          git commit -m "$cachename"
           git push
         
     
