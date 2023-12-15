@@ -19,6 +19,8 @@ inputs:
     required: true
 
   runs:
+    using: 'docker'
+    image: 'Dockerfile'
     steps: 
       - name: Store file in cache
         with:
