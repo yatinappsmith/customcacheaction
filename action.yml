@@ -3,7 +3,7 @@ description: "Create a persistent cache using git"
 
 
 
-Inputs:
+inputs:
   repo_name:
     description: "Name of the repositry to be used for cache"
     required: true
