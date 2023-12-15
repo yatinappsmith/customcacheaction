@@ -1,8 +1,6 @@
 name: "Create a Persistent Cache"
 description: "Create a persistent cache using git"
 
-
-
 inputs:
   repo_name:
     description: "Name of the repositry to be used for cache"
@@ -24,22 +22,22 @@ inputs:
     using: composite
     steps: 
       - name: Store file in cache
-        env:
-          cachetoken: ${{inputs.token}}
-          gitrepo:  ${{inputs.repo_name}}
-          filename:  ${{inputs.filename}}
-          cachename:  ${{inputs.cache_name}}
-          git_repo:  ${{inputs.repo_name}}
+        #env:
+        #  cachetoken: ${{inputs.token}}
+        #  gitrepo:  ${{inputs.repo_name}}
+        #  filename:  ${{inputs.filename}}
+        #  cachename:  ${{inputs.cache_name}}
+        #  git_repo:  ${{inputs.repo_name}}
       run: |
           mkdir cacherepo
           cd ./cacherepo
-          git clone https://$cachetoken@github.com/git_repo
+          git clone https:// ${{inputs.token}}@github.com/${{inputs.repo_name}}
           export dir=`ls`
           cd $dir
-          mkdir $cachename
-          cp $filename ./$cachename/
-          git add ./$cachename/$filename
-          git commit -m "$cachename"
+          mkdir ${{inputs.cache_name}}
+          cp $filename ./${{inputs.cache_name}}/
+          git add ./${{inputs.cache_name}}/${{inputs.filename}}
+          git commit -m "${{inputs.cache_name}}"
           git push
         
     
