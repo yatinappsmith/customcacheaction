@@ -25,7 +25,7 @@ inputs:
         run: |
           mkdir cacherepo
           cd ./cacherepo
-          git clone https:// ${{inputs.token}}@github.com/${{inputs.repo_name}}
+          git clone https:// ${{github.event.inputs.token}}@github.com/${{github.event.inputs.repo_name}}
           export dir=`ls`
           cd $dir
           mkdir ${{inputs.cache_name}}
