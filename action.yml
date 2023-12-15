@@ -13,7 +13,7 @@ Inputs:
   filename:
     description: "file to be cache "
     required: true
-  cachename:
+  cache_name:
     description: "unique cache name to be refrenced"
       required: true
   actiontype:
